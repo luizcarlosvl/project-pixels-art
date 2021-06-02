@@ -42,9 +42,6 @@ cleanClass();
 color4.classList.add('selected');
 }
 
-//let test = document.getElementById('test');
-//test.style.background = '#8FE802'
-
 function paint(event){
     var x = event.target
     console.log(x);
@@ -58,3 +55,12 @@ function cleanClass(){
     color4.className = 'color';
 }
 
+let button = document.getElementById('clear-board');
+let cells = document.getElementsByClassName('pixel');
+button.addEventListener('click', buttonClear);
+
+function buttonClear (){
+    for(index = 0; index < cells.length; index += 1) {
+    cells[index].style.background = '#ffffff';
+    }
+}
