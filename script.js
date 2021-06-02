@@ -3,7 +3,7 @@ let pixelBoard = document.querySelector("#pixel-board");
 let color = '';
 
 let boxColor = document.querySelector('#selectedColor');
-
+boxColor.style.background = '#000000'
 
 let color1 = document.getElementById('palette1');
 color1.addEventListener('click', colorA);
@@ -33,8 +33,14 @@ function colorD (){
 boxColor.style.background = '#8FE802';
 }
 
-let test = document.getElementById('test');
-test.style.background = '#8FE802'
+//let test = document.getElementById('test');
+//test.style.background = '#8FE802'
+
+function teste(event){
+    var x = event.target
+    console.log(x);
+    x.style.background = boxColor.style.background;
+}
 
 
 
