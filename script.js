@@ -6,6 +6,7 @@ let boxColor = document.querySelector('#selectedColor');
 boxColor.style.background = '#000000'
 
 let color1 = document.getElementById('palette1');
+color1.classList.add('selected');
 color1.addEventListener('click', colorA);
 
 function colorA (){
@@ -36,7 +37,7 @@ boxColor.style.background = '#8FE802';
 //let test = document.getElementById('test');
 //test.style.background = '#8FE802'
 
-function teste(event){
+function paint(event){
     var x = event.target
     console.log(x);
     x.style.background = boxColor.style.background;

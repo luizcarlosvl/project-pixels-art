@@ -41,7 +41,8 @@
     
     width: 40px;
     height: 40px;
-    
+    background-color: rgb(255, 255, 255);
+        
 }
 
 .lines {
@@ -62,8 +63,7 @@
 }
 #pixel-board th {
     border: 1px solid black;
-    background: #F0FFF0;
-}
+    }
 
 #selectedColor {
     position: relative;
