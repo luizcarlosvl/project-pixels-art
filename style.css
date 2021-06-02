@@ -64,3 +64,14 @@
     border: 1px solid black;
     background: #F0FFF0;
 }
+
+#selectedColor {
+    position: relative;
+    
+    background-color: black;
+    height: 50px;
+    width: 217px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
