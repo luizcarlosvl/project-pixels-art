@@ -3,50 +3,24 @@
 }
 
 #color-palette{
-    
     display:table;
     margin-left: auto;
     margin-right: auto;
-    
 }
 
 .color {
-    
     width: 50px;
     height: 50px;
     display: inline-block;
     margin: 10px;
     border: solid 1px black;
     border-radius: 50%;
-
-}
-
-#palette1 {
-    background-color: black;
-}
-
-#palette2 {
-    background-color: #E8B331;
-}
-
-#palette3 {
-    background-color: #4D1AE8;
-}
-
-#palette4 {
-    background-color: #8FE802;
 }
 
 .pixel {
-    
     width: 40px;
     height: 40px;
     background-color: rgb(255, 255, 255);
-        
-}
-
-.lines {
-    
 }
 
 #pixel-board {
@@ -58,15 +32,14 @@
 
 #pixel-board td {
     border: 1px solid black;
-    
 }
+
 #pixel-board th {
     border: 1px solid black;
-    }
+}
 
 #selectedColor {
     position: relative;
-    
     background-color: black;
     height: 50px;
     width: 217px;
@@ -78,6 +51,13 @@
 #clear-board{
     display: table;
     margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#auto-paint{
+    display: table;
+    margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
 }
