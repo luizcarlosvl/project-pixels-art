@@ -19,10 +19,17 @@
    
     </section>
 
-    <button id="clear-board">Limpar</button>
+    <button id="clear-board">Limpar</button> <br>
+    
+    <form onsubmit="return false" id="new-size">
+    
+        <input type="number" min="1" id="board-size">
+        <button onclick="getValue()" id="generate-board">VQV</button>
+    
+    </form>
 
     <table onclick="paint(event)" id="pixel-board">
-        <tr>
+        <!-- <tr>
             <td class="pixel"></td>
             <td class="pixel"></td>
             <td class="pixel"></td>
@@ -56,7 +63,7 @@
             <td class="pixel"></td>
             <td class="pixel"></td>
             <td class="pixel"></td>
-        </tr>
+        </tr> -->
     </table>
 
     <footer id="selectedColor"></footer>

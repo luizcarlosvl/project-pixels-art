@@ -1,16 +1,20 @@
 let numeros = [];
+let text = Number;
+table = document.querySelector('#pixel-board');
+
+changeTable(5);
+
 function _sortear(quantidade, maximo) {
-    
-    // Preenche um array com os números de 1 ao maximo
-    for (var numero = 1; numero <= maximo;  numero++) {
-      numeros.push(numero);
-    }
-    
-    numeros.sort(function randomizar(a, b) {
-      return Math.random() * 2 - 1; // Ordena randomicamente
-    });
-  
-    return numeros.splice(0, quantidade);
+  // Preenche um array com os números de 1 ao maximo
+  for (var numero = 1; numero <= maximo; numero++) {
+    numeros.push(numero);
+  }
+
+  numeros.sort(function randomizar(a, b) {
+    return Math.random() * 2 - 1; // Ordena randomicamente
+  });
+
+  return numeros.splice(0, quantidade);
 }
 
 let cor1 = 'rgb(0, 0 ,0)';
@@ -18,21 +22,20 @@ let cor2 = '';
 let cor3 = '';
 let cor4 = '#4D1AE8';
 
-for (c2=0; c2<3; c2+=1){
+for (c2 = 0; c2 < 3; c2 += 1) {
   _sortear(3, 255);
-  cor2 = 'rgb('+numeros[0]+', '+numeros[1]+', '+numeros[2]+')';
+  cor2 = 'rgb(' + numeros[0] + ', ' + numeros[1] + ', ' + numeros[2] + ')';
 }
 
-for (c3=0; c3<3; c3+=1){
+for (c3 = 0; c3 < 3; c3 += 1) {
   _sortear(3, 255);
-  cor3 = 'rgb('+numeros[0]+', '+numeros[1]+', '+numeros[2]+')';
+  cor3 = 'rgb(' + numeros[0] + ', ' + numeros[1] + ', ' + numeros[2] + ')';
 }
 
-for (c4=0; c4<3; c4+=1){
+for (c4 = 0; c4 < 3; c4 += 1) {
   _sortear(3, 255);
-  cor4 = 'rgb('+numeros[0]+', '+numeros[1]+', '+numeros[2]+')';
+  cor4 = 'rgb(' + numeros[0] + ', ' + numeros[1] + ', ' + numeros[2] + ')';
 }
-
 
 let boxColor = document.querySelector('#selectedColor');
 boxColor.style.background = cor1;
@@ -42,85 +45,115 @@ color1.style.background = cor1;
 color1.classList.add('selected');
 color1.addEventListener('click', colorA);
 
-function colorA (){
-boxColor.style.background = cor1;
-cleanClass();
-color1.classList.add('selected');
+function colorA() {
+  boxColor.style.background = cor1;
+  cleanClass();
+  color1.classList.add('selected');
 }
 
 let color2 = document.getElementById('palette2');
 color2.style.background = cor2;
 color2.addEventListener('click', colorB);
 
-
-function colorB (){
-boxColor.style.background = cor2;
-cleanClass();
-color2.classList.add('selected');
+function colorB() {
+  boxColor.style.background = cor2;
+  cleanClass();
+  color2.classList.add('selected');
 }
 
 let color3 = document.getElementById('palette3');
 color3.style.background = cor3;
 color3.addEventListener('click', colorC);
 
-
-function colorC (){
-boxColor.style.background = cor3;
-cleanClass();
-color3.classList.add('selected');
+function colorC() {
+  boxColor.style.background = cor3;
+  cleanClass();
+  color3.classList.add('selected');
 }
 
 let color4 = document.getElementById('palette4');
 color4.style.background = cor4;
 color4.addEventListener('click', colorD);
 
-
-function colorD (){
-boxColor.style.background = cor4;
-cleanClass();
-color4.classList.add('selected');
+function colorD() {
+  boxColor.style.background = cor4;
+  cleanClass();
+  color4.classList.add('selected');
 }
 
-function paint(event){
-    let x = event.target
-    console.log(x);
-    x.style.background = boxColor.style.background;
+function paint(event) {
+  let x = event.target;
+  console.log(x);
+  x.style.background = boxColor.style.background;
 }
 
-function cleanClass(){
-    color1.className = 'color';
-    color2.className = 'color';
-    color3.className = 'color';
-    color4.className = 'color';
+function cleanClass() {
+  color1.className = 'color';
+  color2.className = 'color';
+  color3.className = 'color';
+  color4.className = 'color';
 }
 
 let button = document.getElementById('clear-board');
 let cells = document.getElementsByClassName('pixel');
 button.addEventListener('click', buttonClear);
 
-function buttonClear (){
-    for(index = 0; index < cells.length; index += 1) {
+function buttonClear() {
+  for (index = 0; index < cells.length; index += 1) {
     cells[index].style.background = '#ffffff';
-    }
+  }
 }
 
 numeros = [];
 
-function autoPaint (){
-    for(index = 0; index < cells.length; index += 1) {
+function autoPaint() {
+  for (index = 0; index < cells.length; index += 1) {
     _sortear(1, 4);
-    if (numeros[0]==1){ 
+    if (numeros[0] == 1) {
       cells[index].style.background = cor1;
-    } else if (numeros[0]==2){
+    } else if (numeros[0] == 2) {
       cells[index].style.background = cor2;
-    } else if (numeros[0]==3){
+    } else if (numeros[0] == 3) {
       cells[index].style.background = cor3;
-    }  else if (numeros[0]==4){
-      cells[index].style.background = cor4;  
+    } else if (numeros[0] == 4) {
+      cells[index].style.background = cor4;
     }
-}
+  }
 }
 
 let auto = document.getElementById('auto-paint');
 auto.addEventListener('click', autoPaint);
+
+function getValue() {
+  text = document.getElementById('board-size').value;
+
+  if (text == '') {
+    alert('Board inválido!');
     
+  } else if (text > 0) {
+    
+    if (text < 5 && text > 0) {
+      document.getElementById('board-size').value = '';
+      changeTable(5);
+    } else if (text > 50) {
+      document.getElementById('board-size').value = '';
+      changeTable(50);
+    } else {
+      document.getElementById('board-size').value = '';
+      changeTable(text);
+    }
+  }
+}
+
+
+function changeTable(input) {
+  table.innerHTML = '';
+
+  for (index = 0; index < input; index += 1) {
+    let newRow = table.insertRow();
+    for (index2 = 0; index2 < input; index2 += 1) {
+      let newCell = newRow.insertCell();
+      newCell.classList.add('pixel');
+    }
+  }
+}
