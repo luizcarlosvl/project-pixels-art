@@ -1,6 +1,6 @@
 ## Projeto Pixels Art
 
-# Projeto realizado no curso de Desenvolvimento Web da Trybe.
+### Projeto realizado no curso de Desenvolvimento Web da Trybe.
 
 Descrição:
 
